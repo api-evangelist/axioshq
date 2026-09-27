@@ -1,23 +1,62 @@
 aid: axioshq
+
 name: Axioshq
-description: 'Axioshq is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: 'Axioshq is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub
+  for full-pipeline profiling.'
+
 url: https://raw.githubusercontent.com/api-evangelist/axioshq/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-27 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-27'
+
 modified: '2026-09-27'
+
 tags:
 - Company
-apis: []
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Hosts
+  url: hosts/axioshq-hosts.yml
+- type: Vendors
+  url: vendors/axioshq-vendors.yml
+- type: DomainSecurity
+  url: security/axioshq-domain-security.yml
 - type: Website
   url: https://equityzen.com/company/axioshq
+
+apis:
+- name: Axios HQ API
+  description: Internal communications platform API (no public machine‑readable spec discovered)
+  humanURL: https://axioshq.com
+  baseURL: null
+  aid: axioshq:axios-hq-api
+
+x-coverage:
+  state: unreadable
+  reason: js-rendered-docs
+  detail: The provider’s website serves only HTML pages with no machine‑readable OpenAPI or other contract.
+  evidence:
+  - url: https://axioshq.com
+    status: 200
+  checked: 2026-09-27
+x-enrichment:
+  date: '2026-09-27'
+  status: enriched
+  artifacts_added: 4
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local
